@@ -5,8 +5,9 @@ Version:	0.9
 Release:	1
 License:	GPL
 Group:		Applications/Mail
-Group(pt):	Aplicações/Correio Eletrônico
 Group(pl):	Aplikacje/Poczta
+Group(pt):	Aplicações/Correio Eletrônico
+Group(de):	Applikationen/Post
 Source0:	%{name}.pl
 BuildArch:	noarch
 Requires:	mutt
@@ -17,9 +18,9 @@ Prereq:		/bin/egrep
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This is a simple script, which can be used as Mutt external query command.
-After installing this package you can use Mutt's "Q" command to query LDAP
-database, or "^T" when Mutt asks you for email address.
+This is a simple script, which can be used as Mutt external query
+command. After installing this package you can use Mutt's "Q" command
+to query LDAP database, or "^T" when Mutt asks you for email address.
 
 %prep
 
