@@ -7,7 +7,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Mail
 Source0:	%{name}.pl
-#Source0:	ftp://ftp.mutt.org//pub/mutt/contrib/%{name}-3.0.pl.gz
+#Source0:	ftp://ftp.mutt.org/pub/mutt/contrib/%{name}-3.0.pl.gz
 BuildRequires:	rpm-perlprov
 Requires(post,preun):	grep
 Requires(post,preun):	mutt
