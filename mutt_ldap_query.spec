@@ -8,12 +8,14 @@ License:	GPL
 Group:		Applications/Mail
 Source0:	%{name}.pl
 #Source0:	ftp://ftp.mutt.org//pub/mutt/contrib/%{name}-3.0.pl.gz
-BuildArch:	noarch
-Requires:	mutt
-Requires:	iconv
-Requires:	openldap
 BuildRequires:	rpm-perlprov
-Prereq:		/bin/egrep
+Requires(post,preun):	grep
+Requires(post,preun):	mutt
+Requires(preun):	fileutils
+Requires:	iconv
+Requires:	mutt
+Requires:	openldap
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,18 +41,20 @@ install %{SOURCE0} $RPM_BUILD_ROOT%{_bindir}
 rm -rf $RPM_BUILD_ROOT
 
 %post
+umask 022
 # check if any query_command is already set
-if ! egrep -q "^[[:space:]]*set[[:space:]]+query_command" /etc/Muttrc ; then
+if ! grep -E -q "^[[:space:]]*set[[:space:]]+query_command" /etc/Muttrc ; then
 	cat >> /etc/Muttrc <<EOF;
 set query_command="%{_bindir}/mutt_ldap_query.pl \"\`echo '%s'| iconv -f iso-8859-2 -t utf-8\`\" | iconv -f utf8 -t iso-8859-2"
 EOF
 fi
 
 %preun
+umask 022
 # check if query command is set to mutt_ldap_query
-if egrep -q "^[[:space:]]*set[[:space:]]+query_command.*%{_bindir}/mutt_ldap_query.pl" /etc/Muttrc ; then
+if grep -E -q "^[[:space:]]*set[[:space:]]+query_command.*%{_bindir}/mutt_ldap_query.pl" /etc/Muttrc ; then
 	mv -f /etc/Muttrc /etc/Muttrc.bak && \
-	egrep -v "^[[:space:]]*set[[:space:]]+query_command.*%{_bindir}/mutt_ldap_query.pl" \
+	grep -E -v "^[[:space:]]*set[[:space:]]+query_command.*%{_bindir}/mutt_ldap_query.pl" \
 		/etc/Muttrc.bak > /etc/Muttrc
 fi
 
