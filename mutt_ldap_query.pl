@@ -6,6 +6,9 @@
 # $Revision$
 #
 # $Log$
+# Revision 1.2  2000/09/12 14:18:11  jajcus
+# - fixed Revision CVS tag
+#
 # Revision 1.1  2000/09/12 14:16:42  jajcus
 # - first version
 #
@@ -57,7 +60,7 @@ my ($err)=@_;
 	exit 2;
 }
 
-my ($query,$ldapsearchflags);
+my ($query,$ldapsearchflags,$attrs);
 my ($nrentries,$entries);
 my ($field,$value);
 my (@mails,$cn,$uid,$mail);
@@ -76,8 +79,11 @@ $ldapsearchflags.=" -l '$opt_l'" if defined($opt_l);
 $ldapsearchflags.=" -z '$opt_z'" if defined($opt_z);
 usage if defined($opt_h);
 
-$query=$ARGV[0];
+$query=shift @ARGV;
 usage() unless defined ($query);
+
+$attrs=join(" ",@ARGV);
+$attrs="mail cn uid" unless defined ($attrs) && $attrs ne "";
 
 $query=~s/\(/\\(/g;
 $query=~s/\)/\\)/g;
@@ -86,7 +92,7 @@ $query="(|(uid=*$query*)(cn=*$query*)(sn=*query*))" unless $query=~/^\(.*\)$/;
 
 print "Searching LDAP database...";
 $nrentries=0;
-open RESULT,"ldapsearch $ldapsearchflags '$query'|" || print_error("$!");
+open RESULT,"ldapsearch $ldapsearchflags '$query' $attrs|" || print_error("$!");
 while(<RESULT>){
 	next unless /^dn: /;
 	@mails=undef;
