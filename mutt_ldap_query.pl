@@ -3,9 +3,12 @@
 # LDAP external address query for Mutt v. 0.9
 # (c) Jacek Konieczny <jajcus@pld.org.pl>
 #
-# $Rev: $
+# $Revision$
 #
 # $Log$
+# Revision 1.1  2000/09/12 14:16:42  jajcus
+# - first version
+#
 #
 
 use MIME::Base64 qw(decode_base64);
