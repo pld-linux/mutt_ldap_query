@@ -2,7 +2,7 @@
 Summary:	LDAP query script for Mutt
 Name:		mutt_ldap_query
 Version:	0.9
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Mail
 Group(pl):	Aplikacje/Poczta
