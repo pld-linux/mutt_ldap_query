@@ -5,9 +5,9 @@ Version:	0.9
 Release:	2
 License:	GPL
 Group:		Applications/Mail
+Group(de):	Applikationen/Post
 Group(pl):	Aplikacje/Poczta
 Group(pt):	Aplicações/Correio Eletrônico
-Group(de):	Applikationen/Post
 Source0:	%{name}.pl
 BuildArch:	noarch
 Requires:	mutt
