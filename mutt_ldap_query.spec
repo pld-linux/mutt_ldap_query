@@ -6,9 +6,6 @@ Version:	0.9
 Release:	2
 License:	GPL
 Group:		Applications/Mail
-Group(de):	Applikationen/Post
-Group(pl):	Aplikacje/Poczta
-Group(pt):	Aplicações/Correio Eletrônico
 Source0:	%{name}.pl
 #Source0:	ftp://ftp.mutt.org//pub/mutt/contrib/%{name}-3.0.pl.gz
 BuildArch:	noarch
