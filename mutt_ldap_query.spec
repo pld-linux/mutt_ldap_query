@@ -24,8 +24,8 @@ to query LDAP database, or "^T" when Mutt asks you for email address.
 %description -l pl
 To jest prosty skrypt, który mo¿e byæ u¿ywany jako komenda
 zewnêtrznego zapytania. Po zainstalowaniu tego pakietu mo¿esz u¿ywaæ
-komendy Mutta "Q" do odpytania bazy LDAP lub "^T" kiedy Mutt pyta 
-o adres e-mail.
+komendy Mutta "Q" do odpytania bazy LDAP lub "^T" kiedy Mutt pyta o
+adres e-mail.
 
 %prep
 
