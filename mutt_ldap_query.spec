@@ -1,6 +1,6 @@
 %include        /usr/lib/rpm/macros.perl
 Summary:	LDAP query script for Mutt
-Summary(pl):	Skrypt odpytuj±cy LDAP do Mutta
+Summary(pl.UTF-8):   Skrypt odpytujÄ…cy LDAP do Mutta
 Name:		mutt_ldap_query
 Version:	0.9
 Release:	2
@@ -23,9 +23,9 @@ This is a simple script, which can be used as Mutt external query
 command. After installing this package you can use Mutt's "Q" command
 to query LDAP database, or "^T" when Mutt asks you for email address.
 
-%description -l pl
-To jest prosty skrypt, który mo¿e byæ u¿ywany jako komenda
-zewnêtrznego zapytania. Po zainstalowaniu tego pakietu mo¿esz u¿ywaæ
+%description -l pl.UTF-8
+To jest prosty skrypt, ktÃ³ry moÅ¼e byÄ‡ uÅ¼ywany jako komenda
+zewnÄ™trznego zapytania. Po zainstalowaniu tego pakietu moÅ¼esz uÅ¼ywaÄ‡
 komendy Mutta "Q" do odpytania bazy LDAP lub "^T" kiedy Mutt pyta o
 adres e-mail.
 
