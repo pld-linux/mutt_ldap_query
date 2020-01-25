@@ -1,4 +1,3 @@
-%include        /usr/lib/rpm/macros.perl
 Summary:	LDAP query script for Mutt
 Summary(pl.UTF-8):	Skrypt odpytujący LDAP do Mutta
 Name:		mutt_ldap_query
